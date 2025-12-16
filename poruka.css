@@ -1,0 +1,24 @@
+body > .overlay-poruka {
+    position: fixed;
+    inset: 0; 
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; 
+}
+
+.poruka-box {
+    background: #fff;
+    padding: 30px 50px;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.success { color: green; }
+.error   { color: red; }

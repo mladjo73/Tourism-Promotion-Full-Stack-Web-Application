@@ -1,0 +1,320 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+.mainDiv {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 80px; 
+  font-weight: bold;
+  
+}
+
+/* Meni */
+.menuDiv {
+  display: flex;
+  align-items: center;  
+  justify-content: center;      
+  padding: 10px 20px;
+  background-color: #006666;
+  gap: 30px;                 
+  height: 80px;              
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-size: 20px;
+  width: 100%;
+}
+
+.menuDiv a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menuDiv a:hover {
+  text-decoration: underline;
+}
+
+#logoID {
+  margin: 5px;
+  margin-right: 50px;
+  height: 100%;
+}
+
+/* Dropdown kontejner */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Skrivene opcije */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #006666;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1001; 
+  border-radius: 4px;
+}
+
+/* Linkovi u dropdownu */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+}
+
+.dropdown-content a:hover {
+  background-color: #004d4d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.background-container {
+  position: relative;
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.pozadina-slike {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+/* Form */
+.rezervacija-forma {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.5); 
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  max-width: 800px;
+  width: 90%;
+  z-index: 2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 40px;
+  box-sizing: border-box;
+
+  margin-top: 60px;    
+  margin-bottom: 60px; 
+}
+
+/* Lijeva kolona */
+.rezervacija-forma > div:nth-child(odd),
+.rezervacija-forma label:nth-child(odd),
+.rezervacija-forma input:nth-child(odd),
+.rezervacija-forma select:nth-child(odd),
+.rezervacija-forma textarea:nth-child(odd) {
+  text-align: left;
+  justify-self: start; 
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Desna kolona */
+.rezervacija-forma > div:nth-child(even),
+.rezervacija-forma label:nth-child(even),
+.rezervacija-forma input:nth-child(even),
+.rezervacija-forma select:nth-child(even),
+.rezervacija-forma textarea:nth-child(even) {
+  text-align: left;
+  justify-self: start;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Polja za unos */
+.rezervacija-forma input,
+.rezervacija-forma select,
+.rezervacija-forma textarea {
+  padding: 8px 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.rezervacija-forma select[multiple] {
+  height: auto;
+}
+
+
+#dodatne-aktivnosti,
+#napomena {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* Dugme za slanje */
+.rezervacija-forma button {
+  grid-column: 1 / 3;
+  justify-self: center;
+  width: 160px;
+
+  background-color: #006666;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 0; 
+}
+
+.rezervacija-forma button:hover {
+  background-color: #004d4d;
+}
+
+
+.bottomInfo {
+  margin-top: 0; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+  padding: 0 30px;
+  background-color: #006666;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Lijeva strana */
+.kopirajt p {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+/* Desna strana  */
+.kontakt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.emailPocetna,
+.telefonPocetna {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+#imgEmail,
+#imgPhone {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.kontakt p {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+/* Responzivnost */
+@media (max-width: 650px) {
+  .rezervacija-forma {
+    flex-direction: column;
+  }
+
+  .form-kolona {
+    flex: none;
+    width: 100%;
+  }
+
+  .rezervacija-forma button {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bottomInfo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .kontakt {
+    align-items: center;
+  }
+}
+
+
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+.overlay-poruka {
+  position: fixed;
+  inset: 0; 
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  display: flex !important;        
+  justify-content: center;
+  align-items: center;
+  z-index: 2147483647;              
+  animation: overlay-fade-in .15s ease-out;
+}
+
+.poruka-box {
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 12px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,.5);
+}
+
+.success { color: green; }
+.error   { color: red; }
